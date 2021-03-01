@@ -88,16 +88,16 @@
             Create Article
         </a>
 
-        <ul class="tags">
-            <li class="{{ ! $selectedTag ? ' active' : '' }}">
-                <button wire:click="toggleTag('')">
+        <ul class="tags space-y-1">
+            <li class="{{ ! $selectedTag ? ' active' : 'hover:bg-gray-100' }}">
+                <button wire:click="toggleTag('')" class="w-full text-left">
                     All
                 </button>
-            </li>   
+            </li>
 
             @foreach ($tags as $tag)
-                <li class="{{ $selectedTag === $tag->slug() ? ' active' : '' }}">
-                    <button wire:click="toggleTag('{{ $tag->slug() }}')">
+                <li class="{{ $selectedTag === $tag->slug() ? ' active' : 'hover:bg-gray-100' }}">
+                    <button wire:click="toggleTag('{{ $tag->slug() }}')" class="w-full text-left">
                         {{ $tag->name() }}
                     </button>
                 </li>
